@@ -4,8 +4,11 @@ const connect = function () {
     host: '165.227.47.243',
     port: 50541,
   });
+  conn.on('connect', () => {
+    conn.write('"Name: BAM"');
+  });
   conn.on("connect", () => {
-    console.log('You are connected to a game server')
+    console.log('Successfully connected to a game server')
   });
   conn.on('data', (data) => {
     console.log('Server says: ', data);
