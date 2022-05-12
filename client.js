@@ -8,16 +8,6 @@ const connect = function () {
     conn.write("Name: Bob");
   });
 
-  // conn.on('connect', () => {
-  
-  // setInterval(() => {
-  //   conn.write('Move: left');
-  // }, 70);
-  
-  // });  
-    
-  
-
   conn.on("connect", () => {
     console.log('Successfully connected to a game server')
   });
