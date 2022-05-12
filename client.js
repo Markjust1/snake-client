@@ -5,11 +5,23 @@ const connect = function () {
     port: 50541,
   });
   conn.on('connect', () => {
-    conn.write('"Name: BAM"');
+    conn.write("Name: Bob");
   });
+  
+  conn.on('connect', () => {
+  
+  setInterval(() => {
+    conn.write('Move: up');
+  }, 2000);
+  
+  });  
+    
+  
+
   conn.on("connect", () => {
     console.log('Successfully connected to a game server')
   });
+
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
