@@ -7,14 +7,14 @@ const connect = function () {
   conn.on('connect', () => {
     conn.write("Name: Bob");
   });
+
+  // conn.on('connect', () => {
   
-  conn.on('connect', () => {
+  // setInterval(() => {
+  //   conn.write('Move: left');
+  // }, 70);
   
-  setInterval(() => {
-    conn.write('Move: up');
-  }, 2000);
-  
-  });  
+  // });  
     
   
 
