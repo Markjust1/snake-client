@@ -1,4 +1,12 @@
 const { connect } = require("http2");
+const { 
+  UP_KEY,
+  LEFT_KEY,
+  DOWN_KEY,
+  RIGHT_KEY,
+  SAY
+
+} = require("./constants");
 
 let connection;
 const setupInput = function (conn) {
@@ -16,19 +24,19 @@ const handleUserInput = function (data) {
     process.exit();
   }
   if (data === "\u0077") {
-    connection.write("Move: up");
+    connection.write(UP_KEY);
   }
   if (data === "\u0061") {
-    connection.write("Move: left");
+    connection.write(LEFT_KEY);
   }
   if (data === "\u0073") {
-    connection.write("Move: down");
+    connection.write(DOWN_KEY);
   }
   if (data === "\u0064") {
-    connection.write("Move: right");
+    connection.write(RIGHT_KEY);
   }
   if (data === "y") {
-    connection.write("Say: OM NOM NOM");
+    connection.write(SAY);
   }
 };
 module.exports = { setupInput }
